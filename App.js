@@ -18,8 +18,9 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
-
 import { SafeArea } from "./src/components/utility/safe-area.component";
+
+import { restaurantsRequest } from "./src/services/restaurants/restaurants.service"
 
 const Tab = createBottomTabNavigator();
 
@@ -29,6 +30,11 @@ const TAB_ICON = {
   Courses: "auto-awesome-motion",
   Units: "smartphone",
   SpeechPractice: "mic",
+
+// Restaurants: "md-restaurant",
+//   Map: "md-map",
+//   Settings: "md-settings",
+
 };
 
 
@@ -56,6 +62,19 @@ const SpeechPractice = () => (
     <Text>SpeechPractice</Text>
   </SafeArea>
 );
+
+
+// const Settings = () => (
+//   <SafeArea>
+//     <Text>Settings</Text>
+//   </SafeArea>
+// );
+// const Map = () => (
+//   <SafeArea>
+//     <Text>Map</Text>
+//   </SafeArea>
+// );
+
 
 
 const createScreenOptions = ({ route }) => {
@@ -102,6 +121,11 @@ export default function App() {
             <Tab.Screen name="Courses" component={Courses} />
             <Tab.Screen name="Units" component={Units} />
             <Tab.Screen name="SpeechPractice" component={SpeechPractice} />
+
+            {/* <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+            <Tab.Screen name="Map" component={Map} />
+            <Tab.Screen name="Settings" component={Settings} /> */}
+
           </Tab.Navigator>
         </NavigationContainer>
       </ThemeProvider>
