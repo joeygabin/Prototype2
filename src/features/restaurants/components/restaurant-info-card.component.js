@@ -21,12 +21,15 @@ import {
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
-    name = " IS 503 " ,// name = "Some Restaurant",
+    name = " IS 503 " ,
+   // name = "Some Restaurant", 
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos = [ "https://www.pinterest.ph/pin/550213279460177919/"
-      // "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+    photos = ["https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
-    address = "IT Audit and Controls ",// address = "100 some random street",
+    // photos = ["https://www.pinterest.ph/pin/550213279460177919/",
+    // ],
+    address = "IT Audit and Controls ",
+    // address = "100 some random street",
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
@@ -40,8 +43,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       
       <Info>
       <Text variant="label">{name}</Text>
-        <Section>
-          {/* <Rating>
+        {/* <Section>
+          <Rating>
             {ratingArray.map(() => (
               <SvgXml xml={star} width={20} height={20} />
             ))}
@@ -56,8 +59,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
             <Spacer position="left" size="medium">
             <Icon source={{ uri: icon }} />
             </Spacer>
-          </SectionEnd> */}
-        </Section>
+          </SectionEnd>
+        </Section> */}
         <Address>{address}</Address>
       </Info>
       </RestaurantCard>

@@ -19,8 +19,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
-
-import { restaurantsRequest } from "./src/services/restaurants/restaurants.service"
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,12 +29,14 @@ const TAB_ICON = {
   Courses: "auto-awesome-motion",
   Units: "smartphone",
   SpeechPractice: "mic",
+};
 
+// const TAB_ICON = {
 // Restaurants: "md-restaurant",
 //   Map: "md-map",
 //   Settings: "md-settings",
 
-};
+// };
 
 
 
@@ -50,19 +51,16 @@ const Courses = () => (
     <Text>Courses</Text>
   </SafeArea>
 );
-
 const Units = () => (
   <SafeArea>
     <Text>Units</Text>
   </SafeArea>
 );
-
 const SpeechPractice = () => (
   <SafeArea>
     <Text>SpeechPractice</Text>
   </SafeArea>
 );
-
 
 // const Settings = () => (
 //   <SafeArea>
@@ -76,7 +74,6 @@ const SpeechPractice = () => (
 // );
 
 
-
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   return {
@@ -85,10 +82,7 @@ const createScreenOptions = ({ route }) => {
       <MaterialIcons name={iconName} size={size} color={color} />
     ),
   };
-
-  
 };
-
 
 export default function App() {
 
@@ -107,9 +101,10 @@ export default function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
+    {/* <RestaurantsContextProvider> */}
     <NavigationContainer>
     <Tab.Navigator
-    
+
             screenOptions={createScreenOptions}
             tabBarOptions={{
               activeTintColor: "tomato",
@@ -128,6 +123,7 @@ export default function App() {
 
           </Tab.Navigator>
         </NavigationContainer>
+        {/* </RestaurantsContextProvider> */}
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
   </>
