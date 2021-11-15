@@ -45,3 +45,42 @@ export const LocationContextProvider = ({ children }) => {
     </LocationContext.Provider>
   );
 };
+
+
+// const onSearch = (searchKeyword) => { checkpoint 51
+//   setIsLoading(true);
+//   setKeyword(searchKeyword);
+//  
+// };
+
+// useEffect(() => {
+//   if (!keyword.length) {
+//     // don't do anything
+//     return;
+//   }
+//   
+//   locationRequest(keyword.toLowerCase())
+//     .then(locationTransform)
+//     .then((result) => {
+//       setIsLoading(false);
+// @@ -28,7 +31,7 @@ export const LocationContextProvider = ({ children }) => {
+//       setIsLoading(false);
+//       setError(err);
+//     });
+// 
+// }, [keyword]);
+
+// return (
+//   <LocationContext.Provider
+//     value={{
+//       isLoading,
+//       error,
+//       location,
+//       search: onSearch,
+//       keyword,
+//     }}
+//   >
+//     {children}
+//   </LocationContext.Provider>
+// );
+// };

@@ -5,15 +5,18 @@ import styled from "styled-components/native";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+
 import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 
+import { Search } from "../components/search.component";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+
+
 const SearchContainer = styled.View`
-padding: ${(props) => props.theme.space[3]};
-  
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const RestaurantList = styled(FlatList).attrs({
@@ -31,8 +34,8 @@ const LoadingContainer = styled.View`
   left: 50%;
 `;
 
-// export const RestaurantsScreen = () => {
-//   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+// export const RestaurantsScreen = () => { removed error inside const checkpoint 51 
+//   const { isLoading,  restaurants } = useContext(RestaurantsContext);
   
 //   return (
 //     <SafeArea>
@@ -41,9 +44,9 @@ const LoadingContainer = styled.View`
 //           <Loading size={50} animating={true} color={Colors.blue300} />
 //         </LoadingContainer>
 //       )}
-//       <SearchContainer>
-//         <Searchbar />
-//       </SearchContainer>
+//       
+//         <Search />
+//       
 //       <RestaurantList
 //        data={restaurants}
 //        renderItem={({ item }) => {
@@ -61,7 +64,7 @@ const LoadingContainer = styled.View`
 
 // code for prototype
 export const RestaurantsScreen = () => {
-  // const { isLoading, error, restaurants } = useContext(RestaurantsContext);
+  // const { isLoading,  restaurants } = useContext(RestaurantsContext);
   return (
   <SafeArea>
      {/* {isLoading && (
@@ -69,9 +72,13 @@ export const RestaurantsScreen = () => {
           <Loading size={50} animating={true} color={Colors.blue300} />
         </LoadingContainer>
       )} */}
+
+      {/* <Search /> */}
+
     <SearchContainer>
       <Searchbar />
       </SearchContainer>
+
       <RestaurantList
       data={[
         { name: 1 },
