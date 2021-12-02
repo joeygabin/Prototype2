@@ -10,6 +10,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { SafeArea } from "../../components/utility/safe-area.component";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
+import { ClassNavigator } from "./class.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
 
 // const Tab = createBottomTabNavigator();
@@ -76,7 +77,7 @@ const TAB_ICON = {
 
 
 
-const Class = () => (
+const ClassScreen = () => (
   <SafeArea>
     <Text>Class</Text>
   </SafeArea>
@@ -98,16 +99,16 @@ const SpeechPractice = () => (
   </SafeArea>
 );
 
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
-  </SafeArea>
-);
+// const Settings = () => (
+//   <SafeArea>
+//     <Text>Settings</Text>
+//   </SafeArea>
+// );
+// const Map = () => (
+//   <SafeArea>
+//     <Text>Map</Text>
+//   </SafeArea>
+// );
 
 
 const createScreenOptions = ({ route }) => {
@@ -142,7 +143,7 @@ const createScreenOptions = ({ route }) => {
   
   export const AppNavigator = () => (
     <NavigationContainer>
-    <Tab.Navigator
+    <Tab.Navigator 
 
             screenOptions={createScreenOptions}
             tabBarOptions={{
@@ -151,7 +152,7 @@ const createScreenOptions = ({ route }) => {
             }}
           >
             <Tab.Screen name="DashBoard" component={RestaurantsNavigator} />
-            <Tab.Screen name="Class" component={Class} />
+            <Tab.Screen name="Class" component={ClassScreen} />
             <Tab.Screen name="Courses" component={Courses} />
             <Tab.Screen name="Units" component={Units} />
             <Tab.Screen name="SpeechPractice" component={SpeechPractice} />
